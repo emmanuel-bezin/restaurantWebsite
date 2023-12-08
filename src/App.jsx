@@ -51,10 +51,6 @@ const Container = styled.div`
   flex-direction: column;
   background-color: #0a0a0a;
   scroll-behavior: smooth;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 const App = () => {

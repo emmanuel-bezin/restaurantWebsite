@@ -1,4 +1,14 @@
 body {
   margin: 0px;
   padding: 0px;
+  scrollbar-width: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-ms-overflow-style {
+    display: none;
+  }
 }
