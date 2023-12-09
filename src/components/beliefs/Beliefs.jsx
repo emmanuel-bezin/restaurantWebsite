@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const Beliefs = () => {
   return (
-    <Container>
+    <Container id="Beliefs">
       <Left />
       <Right />
     </Container>

@@ -58,7 +58,7 @@ const Container = styled.div`
 
 const Drinks = () => {
   return (
-    <Container>
+    <Container id="Speciality">
       <Left />
       <Middle>
         <Title>Today's special</Title>

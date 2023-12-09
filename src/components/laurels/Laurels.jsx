@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const Laurels = () => {
   return (
-    <Container>
+    <Container id="Laurels">
       <Left />
       <Right />
     </Container>

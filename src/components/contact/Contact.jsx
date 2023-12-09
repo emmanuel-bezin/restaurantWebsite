@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const Contact = () => {
   return (
-    <Container>
+    <Container id="Contact">
       <Top />
       <Bottom />
     </Container>

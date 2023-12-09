@@ -54,7 +54,7 @@ const Container = styled.div`
 
 const About = () => {
   return (
-    <Container>
+    <Container id="About">
       <Left />
       <Middle>
         <G src="./G.png" />

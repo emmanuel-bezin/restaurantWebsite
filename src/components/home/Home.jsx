@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const Home = () => {
   return (
-    <Container>
+    <Container id="Home">
       <Left />
       <Right />
     </Container>

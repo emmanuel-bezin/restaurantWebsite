@@ -89,7 +89,7 @@ const Gallery = () => {
   };
 
   return (
-    <Container>
+    <Container id="Gallery">
       <ChildContainer>
         <Left />
         <div>

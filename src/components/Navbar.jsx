@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 
@@ -22,17 +23,18 @@ const BurgerMenu = styled(GiHamburgerMenu)`
   }
 `;
 
-const BookTable = styled.p`
+const BookTable = styled(Link)`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding-right: 10px;
   margin: 0px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
-const Item = styled.p`
+const Item = styled(Link)`
   cursor: pointer;
   &:hover {
     border-bottom: 1px solid #e2e2a1;
@@ -69,6 +71,17 @@ const Container = styled.div`
 `;
 
 const Navbar = ({ isOpen, setIsOpen }) => {
+  const data = [
+    "Home",
+    "About",
+    "Speciality",
+    "Beliefs",
+    "Laurels",
+    "Gallery",
+    "Find Us",
+    "Contact",
+  ];
+
   return (
     <Container>
       <Name>GERICHT</Name>
@@ -79,13 +92,30 @@ const Navbar = ({ isOpen, setIsOpen }) => {
         <BurgerMenu size={30} onClick={() => setIsOpen(true)} />
       )}
       <Nav>
-        <Item>Home</Item>
-        <Item>About</Item>
-        <Item>Menu</Item>
-        <Item>Awards</Item>
-        <Item>Contact</Item>
+        {data.map((item, idx) => {
+          return (
+            <Item
+              key={idx}
+              to={item}
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+            >
+              {item}
+            </Item>
+          );
+        })}
       </Nav>
-      <BookTable style={{ cursor: "pointer" }}>Book Table</BookTable>
+      <BookTable
+        to="Contact"
+        smooth={true}
+        duration={500}
+        spy={true}
+        exact="true"
+      >
+        Book Table
+      </BookTable>
     </Container>
   );
 };

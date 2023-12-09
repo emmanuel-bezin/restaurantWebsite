@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
 import Navbar from "./components/Navbar";
 import Home from "./components/home/Home";
@@ -12,7 +13,7 @@ import Gallery from "./components/gallery/Gallery";
 import FindUs from "./components/findUs/FindUs";
 import Contact from "./components/contact/Contact";
 
-const Item = styled.li`
+const Item = styled(Link)`
   list-style: none;
   text-align: center;
   font-size: 28px;
@@ -55,16 +56,33 @@ const Container = styled.div`
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const items = ["Home", "About", "Menu", "Awards", "Contact", "Book Table"];
+  const data = [
+    "Home",
+    "About",
+    "Speciality",
+    "Beliefs",
+    "Laurels",
+    "Gallery",
+    "Find Us",
+    "Contact",
+  ];
 
   return (
     <Container>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Menu isOpen={isOpen}>
         <List>
-          {items.map((item, idx) => {
+          {data.map((item, idx) => {
             return (
-              <Item onClick={() => setIsOpen(false)} key={idx}>
+              <Item
+                onClick={() => setIsOpen(false)}
+                key={idx}
+                to={item}
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+              >
                 {item}
               </Item>
             );
